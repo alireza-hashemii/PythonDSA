@@ -1,11 +1,10 @@
 import os 
 
-total = 0
-def disk_usage(path: str) -> int:
-    global total
-    if os.path.exists(path):
-        total += os.path.getsize(path)
 
+def disk_usage(path: str) -> int:
+
+    if os.path.exists(path):
+        total = os.path.getsize(path)
         for filesnames in os.listdir(path):
             if os.path.isdir(filesnames):
                 npath = os.path.join(path, filesnames)
@@ -17,4 +16,3 @@ def disk_usage(path: str) -> int:
     
 
 disk = disk_usage(r'C:\Users\AVA\Desktop\startbootstrap-clean-blog-gh-pages')
-print(disk)
