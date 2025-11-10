@@ -2,7 +2,6 @@ import os
 
 
 def disk_usage(path: str) -> int:
-
     if os.path.exists(path):
         total = os.path.getsize(path)
         for filesnames in os.listdir(path):
